@@ -80,17 +80,17 @@ const Navbar = () => {
               <img
                 src={settings.logo.startsWith('http') ? settings.logo : `http://localhost:5001${settings.logo}`}
                 alt="Company Logo"
-                className="h-10 w-auto"
+                className="h-12 w-auto object-contain"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}
               />
             ) : (
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">IS</span>
               </div>
             )}
-            <div className="text-2xl font-bold text-primary-600">
+            <div className="text-2xl font-bold text-primary-600 leading-tight">
               ISYS INFORMATICS
             </div>
           </Link>

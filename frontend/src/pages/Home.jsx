@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Factory, Truck, Zap, Users, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { productApi } from '../api/productApi';
 import { settingsApi } from '../api/settingsApi';
+import allImage from '../assets/images/all.png';
+import cctvImage from '../assets/images/cctv security system.png';
+import fireSafetyImage from '../assets/images/fire safety system.png';
+import accessControlImage from '../assets/images/access control system.png';
+import roadSafetyImage from '../assets/images/Road safety cum entrance solutions.png';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -10,11 +15,11 @@ const Home = () => {
   const [settings, setSettings] = useState(null);
 
   const sliderImages = [
-    'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1563770095-39d468f95a41?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1581093458791-9f3d03c4b46c?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80'
+    allImage,
+    cctvImage,
+    fireSafetyImage,
+    accessControlImage,
+    roadSafetyImage
   ];
 
   useEffect(() => {
@@ -57,10 +62,9 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section with Image Slider */}
-      <section className="relative bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-20 overflow-hidden">
-        {/* Image Slider */}
-        <div className="absolute inset-0 opacity-30">
+      {/* Image Slider Section */}
+      <section className="relative bg-black overflow-hidden">
+        <div className="relative w-full h-[83vh]">
           {sliderImages.map((image, index) => (
             <div
               key={index}
@@ -71,18 +75,53 @@ const Home = () => {
               <img
                 src={image}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-[83vh] object-center mt-0"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}
               />
             </div>
           ))}
-        </div>
 
-        {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          {/* Slider Navigation */}
+          {sliderImages.length > 1 && (
+            <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+              <button
+                onClick={prevSlide}
+                className="p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
+              >
+                <ChevronLeft className="w-8 h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          )}
+
+          {/* Slider Dots */}
+          {sliderImages.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide ? 'bg-white' : 'bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Hero Content Section */}
+      <section className="relative bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <div className="max-w-3xl text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Complete Industrial & Security Solutions Under One Roof
             </h1>
@@ -90,7 +129,7 @@ const Home = () => {
               Reliable products and professional solutions for security, safety, material handling,
               industrial storage, cleaning, automation and facility management.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/products" className="btn-primary inline-flex items-center gap-2">
                 Explore Products
                 <ArrowRight className="w-5 h-5" />
@@ -108,39 +147,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Slider Navigation */}
-        {sliderImages.length > 1 && (
-          <div className="absolute bottom-8 right-8 flex gap-2">
-            <button
-              onClick={prevSlide}
-              className="p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        )}
-
-        {/* Slider Dots */}
-        {sliderImages.length > 1 && (
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {sliderImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        )}
       </section>
 
       {/* Features Section */}
