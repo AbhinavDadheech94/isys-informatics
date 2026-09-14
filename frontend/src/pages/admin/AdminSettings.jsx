@@ -161,7 +161,7 @@ const AdminSettings = () => {
                 {formData.logo && (
                   <div className="mt-2">
                     <img
-                      src={formData.logo.startsWith('http') ? formData.logo : `http://localhost:5001${formData.logo}`}
+                      src={formData.logo.startsWith('http') ? formData.logo : `https://isysinformatics.com${formData.logo}`}
                       alt="Current Logo"
                       className="h-16 w-auto"
                       onError={(e) => {

@@ -117,7 +117,7 @@ const ProductDetail = () => {
           <div>
             {product.image ? (
               <img
-                src={`http://localhost:5001${product.image}`}
+                src={`https://isysinformatics.com${product.image}`}
                 alt={product.name}
                 className="w-full rounded-lg shadow-md"
                 onError={(e) => {
@@ -344,7 +344,7 @@ const ProductDetail = () => {
                   <div className="aspect-w-16 aspect-h-12 bg-gray-200">
                     {relatedProduct.image ? (
                       <img
-                        src={`http://localhost:5001${relatedProduct.image}`}
+                        src={`https://isysinformatics.com${relatedProduct.image}`}
                         alt={relatedProduct.name}
                         className="w-full h-auto object-contain"
                         onError={(e) => {

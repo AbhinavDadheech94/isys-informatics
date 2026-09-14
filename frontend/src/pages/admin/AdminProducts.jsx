@@ -119,7 +119,7 @@ const AdminProducts = () => {
       image: null
     });
     const imageUrl = product.image
-      ? (product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`)
+      ? (product.image.startsWith('http') ? product.image : `https://isysinformatics.com${product.image}`)
       : null;
     setImagePreview(imageUrl);
     setShowForm(true);
@@ -230,7 +230,7 @@ const AdminProducts = () => {
                       <div className="flex items-center">
                         {product.image && (
                           <img
-                            src={`http://localhost:5001${product.image}`}
+                            src={`https://isysinformatics.com${product.image}`}
                             alt={product.name}
                             className="h-10 w-10 rounded object-contain mr-3"
                             onError={(e) => {

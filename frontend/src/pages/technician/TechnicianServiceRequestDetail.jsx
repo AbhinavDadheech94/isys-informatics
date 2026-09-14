@@ -107,7 +107,7 @@ const TechnicianServiceRequestDetail = () => {
                 <div className="mb-6">
                   <p className="text-sm text-gray-600 mb-2">Attachment</p>
                   <a
-                    href={`http://localhost:5001${request.attachment}`}
+                    href={`https://isysinformatics.com${request.attachment}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-600 hover:text-primary-900"

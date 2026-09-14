@@ -81,7 +81,7 @@ const AdminCategories = () => {
     });
     // Handle both external URLs and local paths
     const imageUrl = category.image
-      ? (category.image.startsWith('http') ? category.image : `http://localhost:5001${category.image}`)
+      ? (category.image.startsWith('http') ? category.image : `https://isysinformatics.com${category.image}`)
       : null;
     setImagePreview(imageUrl);
     setShowForm(true);

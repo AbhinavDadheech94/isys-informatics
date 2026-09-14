@@ -7,7 +7,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-
+app.set('trust proxy', 1);
 // Security middleware (disable for uploads to allow CORS)
 app.use((req, res, next) => {
   if (req.path.startsWith('/image-uploads')) {

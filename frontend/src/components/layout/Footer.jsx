@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               {settings?.logo && (
                 <img
-                  src={settings.logo.startsWith('http') ? settings.logo : `http://localhost:5001${settings.logo}`}
+                  src={settings.logo.startsWith('http') ? settings.logo : `https://isysinformatics.com${settings.logo}`}
                   alt="Company Logo"
                   className="h-8 w-auto flex-shrink-0"
                   onError={(e) => {

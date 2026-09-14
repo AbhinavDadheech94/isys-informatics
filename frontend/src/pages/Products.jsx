@@ -97,7 +97,7 @@ const Products = () => {
                   <div className="bg-gray-200">
                     {category.image ? (
                       <img
-                        src={category.image.startsWith('http') ? category.image : `http://localhost:5001${category.image}`}
+                        src={category.image.startsWith('http') ? category.image : `https://isysinformatics.com${category.image}`}
                         alt={category.name}
                         className="w-full h-auto object-contain"
                         onError={(e) => {
@@ -148,7 +148,7 @@ const Products = () => {
                     <div className="h-48 bg-gray-200">
                       {product.image ? (
                         <img
-                          src={product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`}
+                          src={product.image.startsWith('http') ? product.image : `https://isysinformatics.com${product.image}`}
                           alt={product.name}
                           className="w-full h-48 object-contain"
                           onError={(e) => {
